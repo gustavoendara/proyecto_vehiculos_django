@@ -1,0 +1,9 @@
+{% extends 'vehiculo/base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-danger">403-Pagina no encontrada</h1>
+    <p>Lo sentimos, para ver la lista debes estar registrado</p>
+    <a href="{%url 'index'%}" class="btn btn-danger">Regresar</a>
+</div>
+
+{% endblock content %}

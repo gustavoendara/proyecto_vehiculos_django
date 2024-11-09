@@ -1,0 +1,37 @@
+{% extends 'vehiculo/base.html' %}
+
+{% block title %}Lista de Vehículos{% endblock %}
+
+{% block content %}
+    <h1>Listado de Vehículos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Serial Carroceria</th>
+                <th>Serial Motor</th>
+                <th>Categoría</th>
+                <th>Precio</th>
+                <th>Categoría de Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in vehiculos %}
+            <tr>
+                <td>{{ item.vehiculo.marca }}</td>
+                <td>{{ item.vehiculo.modelo }}</td>
+                <td>{{ item.vehiculo.serial_carroceria }}</td>
+                <td>{{ item.vehiculo.serial_motor }}</td>
+                <td>{{ item.vehiculo.categoria }}</td>
+                <td>{{ item.vehiculo.precio }}</td>
+                <td>{{ item.categoria_precio }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="7">No hay vehículos disponibles.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
